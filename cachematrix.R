@@ -1,7 +1,8 @@
-## 
-##
+## Instead of repeatedly calculating the inverse of a matrix, we check the cache for whether it's already been calculated. To do 
+## this, we equate the original matrix to a variable and immediately check whether that variable's been "done" in the cache. 
 
-## Write a short comment describing this function
+## The "set" function enables the program to pull from the global environment. "get" is just the original matrix. "setinv" changes
+## the null matrix to the inverse if given the inverse. "getinv" is the inverse. 
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -20,7 +21,7 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+##checks if the inverse is null and if not, it was pulled from the cache. If it is, then the inverse is calculated. 
 
 cacheSolve <- function(x, ...) {
         inv <- x$getinv()
